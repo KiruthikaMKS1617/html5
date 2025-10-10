@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <meta
+      name="description"
+      content="Get in touch with us through our contact form."
+    />
+    <meta name="author" content="Kiruthika Muruganantham" />
+  </head>
+  <body>
+    <main>
+      <section aria-labelledby="get-in-touch">
+        <h1 id="get-in-touch">Get in touch with me</h1>
+        <p id="contact-desc">
+          Please fill in the details below to send me a message directly.
+        </p>
+        <form
+          aria-describedby="contact-desc"
+          action="mailto:kiruthika@example.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <fieldset>
+            <legend>Personal Details</legend>
+            <div>
+              <label for="full-name">Full Name:</label>
+              <input
+                type="text"
+                name="fullName"
+                id="full-name"
+                maxlength="100"
+                required
+                autocomplete="name"
+              />
+            </div>
+
+            <div>
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                aria-describedby="email-hint"
+                autocomplete="email"
+              />
+              <small id="email-hint">We’ll reply to this address.</small>
+            </div>
+
+            <div>
+              <label for="phone-no">Phone No:</label>
+              <input
+                type="tel"
+                name="phoneNo"
+                id="phone-no"
+                pattern="[0-9]{10}"
+                placeholder="1234567890"
+                required
+                autocomplete="tel"
+                aria-describedby="phone-hint"
+              />
+              <div id="phone-hint" class="form-hint">
+                Include country code, e.g. +91-98xxxx.
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Message</legend>
+            <div>
+              <label for="subject">Subject:</label>
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                maxlength="150"
+                required
+                autocomplete="off"
+                aria-describedby="subject-hint"
+              />
+              <div id="subject-hint" class="form-hint">Brief subject line.</div>
+            </div>
+
+            <div>
+              <label for="message">Message:</label>
+              <textarea
+                name="message"
+                id="message"
+                required
+                autocomplete="off"
+                aria-describedby="message-hint"
+              ></textarea>
+              <div id="message-hint" class="form-hint">
+                Please include any links or details I should know.
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit">Send Message</button>
+          <!-- mailto fallback for users who want quick email -->
+          <a href="mailto:kiruthika@example.com?subject=Contact%20from%20site"
+            >Or email directly</a
+          >
+          <div
+            id="form-status"
+            role="status"
+            aria-live="polite"
+            class="visually-hidden"
+          ></div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
